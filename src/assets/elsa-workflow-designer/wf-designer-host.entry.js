@@ -627,7 +627,7 @@ class DesignerHost {
         return (h("host", null, h("wf-activity-picker", { activityDefinitions: activityDefinitions, ref: el => this.activityPicker = el }), h("wf-activity-editor", { activityDefinitions: activityDefinitions, ref: el => this.activityEditor = el }), h("wf-import-export", { ref: el => this.importExport = el }), h("div", { class: "workflow-designer-wrapper dragscroll" }, h("wf-designer", { activityDefinitions: activityDefinitions, ref: el => this.designer = el, canvasHeight: this.canvasHeight, workflow: this.workflow, readonly: this.readonly, onWorkflowChanged: this.onWorkflowChanged }))));
     }
     get el() { return getElement(this); }
-    static get style() { return ".workflow-designer-wrapper {\n  height: 80vh;\n  overflow-y: auto;\n}"; }
+    static get style() { return ".workflow-designer-wrapper {\n height: 90vh;\n overflow-y: auto;\n background: #efefef;}"; }
 }
 
 export { DesignerHost as wf_designer_host };
