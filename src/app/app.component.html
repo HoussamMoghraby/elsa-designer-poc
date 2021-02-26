@@ -5,7 +5,15 @@
   </h1>
   <div class="col-12">
     <div class="row">
-      <div class="col-9">
+      <div class="col-3">
+        <div>
+          <div (click)="addActivity(activity)" *ngFor="let activity of originalActivities"
+            style="border:1px solid #ccc; background: #fefefe; margin-bottom:5px; cursor: pointer; user-select: none;">
+            <h4>{{activity.displayName}}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
         <ng-wf-designer-host *ngIf="dataAvailable" [activityDefinition]="activityDefinition"
           [(workflowModel)]="workflowModel" (workflowModelEdit)="onWorkflowEdit($event)">
         </ng-wf-designer-host>

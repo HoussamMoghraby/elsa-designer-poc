@@ -16,9 +16,9 @@ import {
 @Component({
   selector: "ng-wf-designer-host",
   template: `
-  <div>
+  <!-- <div>
     <button (click)="onAddActivity()">Add new Activity</button>
-  </div>
+  </div> -->
     <wf-designer-host
       #wfhost
       id="designerHost"
@@ -52,7 +52,6 @@ export class NGWFDesignerHostComponent
       console.log(changes);
       //this.workflowModel = {}
       console.log(changes.workflowModel.currentValue);
-      debugger;
       this.workflowModel = { ...changes.workflowModel.currentValue };
       this.cdr.detectChanges();
     }
@@ -76,8 +75,8 @@ export class NGWFDesignerHostComponent
 
 
   ngOnDestroy() {
-    this.wfhost.nativeElement.removeEventListener("workflowChanged");
-    this.wfhost.nativeElement.removeEventListener("edit-activity");
+    this.wfhost.nativeElement.removeEventListener("workflowChanged", {});
+    this.wfhost.nativeElement.removeEventListener("edit-activity", {});
   }
 
   workflowChange(event) {
